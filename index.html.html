@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Profesional</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: #fff;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px;
+      background: rgba(0,0,0,0.4);
+      backdrop-filter: blur(10px);
+      animation: fadeDown 1s ease;
+    }
+
+    header h1 {
+      margin: 10px 0;
+      font-size: 36px;
+    }
+
+    header p {
+      color: #94a3b8;
+    }
+
+    nav a {
+      margin: 0 10px;
+      color: #38bdf8;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+      position: relative;
+      padding: 5px 10px;
+    }
+
+    nav a:hover {
+      color: #fff;
+    }
+
+    /* ACTIVE NAV */
+    nav a.active {
+      color: #fff;
+    }
+
+    nav a.active::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 100%;
+      height: 2px;
+      background: #38bdf8;
+      border-radius: 5px;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: auto;
+      animation: fadeUp 1s ease;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.05);
+      padding: 25px;
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      margin-bottom: 25px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.7);
+    }
+
+    .profile-img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto 20px;
+      border: 3px solid #38bdf8;
+      cursor: pointer;
+      transition: transform 0.4s;
+    }
+
+    .profile-img:hover {
+      transform: scale(1.1) rotate(3deg);
+    }
+
+    ul { padding-left: 20px; }
+
+    button {
+      background: linear-gradient(45deg, #38bdf8, #0ea5e9);
+      border: none;
+      padding: 12px 25px;
+      border-radius: 8px;
+      cursor: pointer;
+      color: #000;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0,0,0,0.4);
+    }
+
+    /* MODAL */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.9);
+    }
+
+    .modal-content {
+      display: block;
+      margin: 100px auto;
+      width: 300px;
+      border-radius: 15px;
+      animation: zoomIn 0.4s;
+    }
+
+    .close {
+      position: absolute;
+      top: 30px;
+      right: 40px;
+      font-size: 35px;
+      cursor: pointer;
+    }
+
+    @keyframes zoomIn {
+      from { transform: scale(0.5); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <img src="profile.jpeg" class="profile-img" id="myImg">
+  <h1>Szeloicha Ahmad Arya Assholeh</h1>
+  <p>IT Support | Networking | CCTV Specialist</p>
+  <nav>
+    <a href="#about" class="active">Tentang</a>
+    <a href="#skill">Skill</a>
+    <a href="#experience">Pengalaman</a>
+    <a href="#contact">Kontak</a>
+  </nav>
+</header>
+
+<section id="about">
+  <div class="card">
+    <h2>Tentang Saya</h2>
+    <p>Saya adalah seorang IT Support profesional dengan pengalaman dalam instalasi jaringan, konfigurasi perangkat, serta troubleshooting sistem IT.</p>
+    <p>Berpengalaman dalam instalasi CCTV, manajemen jaringan LAN/WAN, serta konfigurasi Mikrotik dan perangkat jaringan lainnya.</p>
+  </div>
+</section>
+
+<section id="skill">
+  <div class="card">
+    <h2>Keahlian Teknis</h2>
+    <ul>
+      <li>Konfigurasi Mikrotik (Hotspot, PPPoE, Routing)</li>
+      <li>Setting Router & Access Point</li>
+      <li>Instalasi CCTV (Hikvision, DVR/NVR)</li>
+      <li>Manajemen Jaringan LAN/WAN</li>
+      <li>Firewall & Security Basic</li>
+      <li>Troubleshooting Komputer & Laptop</li>
+      <li>Instalasi Windows & Software</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Keahlian Tambahan</h2>
+    <ul>
+      <li>Maintenance Server Sederhana</li>
+      <li>Remote Desktop & Support</li>
+      <li>Crimping Kabel LAN</li>
+      <li>Manajemen User & Sharing Network</li>
+    </ul>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="card">
+    <h2>Pengalaman Kerja</h2>
+    <ul>
+      <li><b>IT Support Lapangan</b> - Instalasi jaringan dan CCTV</li>
+      <li><b>Freelance Networking</b> - Setup Mikrotik & hotspot</li>
+      <li><b>Teknisi Komputer</b> - Perbaikan hardware/software</li>
+      <li><b>Maintenance CCTV</b> - Perawatan sistem pengawasan</li>
+    </ul>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="card">
+    <h2>Kontak</h2>
+    <p>Email: Rababil061@gmail.com</p>
+    <p>WhatsApp: 081953655038</p>
+    <button onclick="showAlert()">Hubungi Saya</button>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Szelo Celio</p>
+</footer>
+
+<!-- MODAL -->
+<div id="imgModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="imgZoom">
+</div>
+
+<script>
+function showAlert() {
+  alert('Terima kasih! Saya akan segera menghubungi Anda.');
+}
+
+/* ZOOM FOTO */
+const modal = document.getElementById("imgModal");
+const img = document.getElementById("myImg");
+const modalImg = document.getElementById("imgZoom");
+const closeBtn = document.getElementsByClassName("close")[0];
+
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+}
+
+closeBtn.onclick = function() {
+  modal.style.display = "none";
+}
+
+modal.onclick = function(e) {
+  if(e.target === modal) {
+    modal.style.display = "none";
+  }
+}
+
+/* NAVBAR ACTIVE */
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll("nav a");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 100;
+    const sectionHeight = section.clientHeight;
+
+    if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove("active");
+    if (link.getAttribute("href").includes(current)) {
+      link.classList.add("active");
+    }
+  });
+});
+</script>
+
+</body>
+</html>
